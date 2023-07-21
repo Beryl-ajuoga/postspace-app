@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import FeedPage from './components/FeedPage';
+import LoginPage from './components/LoginPage';
+import MyPostsPage from './components/MyPostsPage';
 
 function App() {
+  const [authenticated, setAuthenticated] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {authenticated ? (
+        <>
+          <FeedPage />
+          <MyPostsPage />
+        </>
+      ) : (
+        <LoginPage setAuthenticated={setAuthenticated} />
+      )}
     </div>
   );
 }
+   
 
 export default App;
+
+
