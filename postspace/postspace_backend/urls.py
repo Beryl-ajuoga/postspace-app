@@ -16,21 +16,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import get_posts, login_user, get_user_posts
-
-
-
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-# ]
-
+from api.views import get_posts, login_user, get_user_posts, block_post
 from django.urls import path
-from backend.api.views import get_posts, login_user
+from api.views import get_posts, login_user,block_post
+from . import views
 
 urlpatterns = [
     path('posts/', get_posts, name='get_posts'),
     path('login/', login_user, name='login_user'),
     path('my-posts/', get_user_posts, name='user_posts'),
     path('admin/', admin.site.urls),
+    path('block-post/', block_post, name= 'block_post'),
+    path('posts/<int:post_id>/comments/', views.get_post_comments, name='get_post_comments'),
+    path('posts/<int:post_id>/like/', views.like_post, name='like_post'),
+    path('posts/<int:post_id>/view/', views.increment_post_views, name='increment_post_views'),
+
 
 ]

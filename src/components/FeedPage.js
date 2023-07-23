@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom'
 
 
 const FeedPage = ({setAuthenticated}) =>{
     //State to store the post and user data
     const[posts, setPosts]=useState([]);
     const [user, setUser]= useState({});
+    const history = useHistory();
 
 
     useEffect(() =>{
@@ -22,6 +24,12 @@ const FeedPage = ({setAuthenticated}) =>{
     .then((postData)=> setPosts(postData.slice(0,20)));
 
     }, []);
+
+    //Navigation to the Following page
+    const handleViewFollowing = () =>{
+        history.push('/following');
+    };
+
 
 
     return(
