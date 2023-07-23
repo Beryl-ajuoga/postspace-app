@@ -1,13 +1,121 @@
-body {
+/* Main layout */
+
+/* *{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Feed Page */
+#feed-page {
+  margin-bottom: 30px;
+}
+
+.post {
+  border: 1px solid #dbdbdb;
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.post h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.post p {
+  margin: 10px 0;
+  color: #555;
+}
+
+.post button {
+  background-color:#3897f0;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.post button:hover {
+  background-color: #3173c3;
+}
+
+/* Recommended Posts */
+#recommended-posts {
+  margin-bottom: 30px;
+}
+
+.recommended-post {
+  border: 1px solid #dbdbdb;
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+
+
+}
+
+.recommended-post h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.recommended-post p {
+  margin: 10px 0;
+  color: #555;
+}
+
+
+/* My Posts Page */
+#my-posts-page {
+  margin-bottom: 30px;
+}
+
+.ad-space {
+  border: 1px solid red;
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+
+}
+
+.ad-space h3 {
+  font-size: 18px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+}
+
+.ad-space p {
+  margin: 10px 0;
+  color: #555;
 }

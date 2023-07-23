@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './index.css'
 import FeedPage from './components/FeedPage';
 import LoginPage from './components/LoginPage';
 import MyPostsPage from './components/MyPostsPage';
@@ -17,12 +18,13 @@ function App() {
         {isPremiumMember? <FeedPage setAuthenticated={setAuthenticated} /> : <PremiumPage/>} 
         {/* { Conditional rendering} */}
           <FeedPage />
-          <MyPostsPage />
           <MyPostsPage isPremiumMember = {isPremiumMember}/>
           <FollowingPage/>
         </>
       ) : (
-        <><LoginPage setAuthenticated={setAuthenticated} /><LoginPage setAuthenticated={setAuthenticated} setIsPremiumMember={setIsPremiumMember} /></>  
+        <>
+        {/* <LoginPage setAuthenticated={setAuthenticated} /> */}
+        <LoginPage setAuthenticated={setAuthenticated} setIsPremiumMember={setIsPremiumMember} /></>  
       )}
     </div>
   );

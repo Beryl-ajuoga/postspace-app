@@ -3,7 +3,15 @@ import React, { useState } from "react";
 const LoginPage = ({ setAuthenticated }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState(""
+  const fetchPosts = () => {
+    const url = isPremiumMember ?
+      : 'https://jsonplaceholder.typicode.com/users';
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((postData) => setMyPosts(postData));
+  };
 
   // checks if the entered username and password are correct
   const handleLogin = () => {
